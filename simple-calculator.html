@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td{
+            border: 1px solid gray;
+            width: 165px; length: 100px;
+            text-align: right;
+            font-size: 14pt;
+        }
+        button{
+            border: 1px solid gray;
+            background-color: white;
+            width: 40px; height: 40px;
+            text-align: center;
+            color: blue;
+            font-size: 14pt;
+        }
+    </style>
+
+</head>
+<body>
+<h3 style="color: blue; position: relative; left: 15px;"> Simple Calculator</h3>
+<table>
+    <tr>
+        <td colspan = '4' id="result">0</td>
+    </tr>
+</table>
+    <br>
+        <button onclick="cal(this);">1</button>
+        <button onclick="cal(this);">2</button>
+        <button onclick="cal(this);">3</button>
+        <button onclick="cal(this);">+</button>
+    <br>
+    <br>
+        <button onclick="cal(this);">4</button>
+        <button onclick="cal(this);">5</button>
+        <button onclick="cal(this);">6</button>
+        <button onclick="cal(this);">-</button>
+    <br>
+    <br>
+        <button onclick="cal(this);">7</button>
+        <button onclick="cal(this);">8</button>
+        <button onclick="cal(this);">9</button>
+        <button onclick="cal(this);">*</button>
+    <br>
+    <br>
+        <button onclick="cal(this);">C</button>
+        <button onclick="cal(this);">0</button>
+        <button onclick="cal(this);">=</button>
+        <button onclick="cal(this);">/</button>
+</body>
+</html>
+<script>
+    var result = document.getElementById('result');
+    function cal(obj){
+        let bt = obj.innerHTML;
+        if (bt == '='){
+            //Calculate
+            result.innerHTML = eval(result.innerHTML);
+        } else if (bt == 'C') {
+            //Clear result
+            result.innerHTML = '0';
+        } else {
+            if (result.innerHTML == '0'){
+                result.innerHTML = bt;
+            } else {
+                result.innerHTML += bt;
+            }
+        }
+    }
+
+</script>
